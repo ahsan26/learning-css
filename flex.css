@@ -1,0 +1,46 @@
+#container-1{
+    display:flex;
+    /* 
+    align-items:center || strech == default || flex-start;
+    flex-direction: row || column;
+    */
+    align-items: center;
+}
+#container-1 div, .container-2box,.container-3box{
+    padding: 10px;
+    border:1px solid #ccc;
+}
+#box-1{
+    flex: 2;
+    order: 2;
+}
+#box-2{
+    order: 1;
+    flex: 1;
+}
+#box-3{
+    order: 3;
+    flex: 1;
+}
+@media(min-width:468px){
+    #container-2{
+        display: flex;
+        flex-direction: row;
+        /* justify-content:center; >> to make the flex containers in the center  */
+        justify-content: space-around;
+    }
+}
+.container-2box{
+    /* width:27%; WE can use flex-basis instaed of width */
+    flex-basis: 27%;
+    }
+    @media(min-width:468px){
+
+        #container-3{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .container-3box{
+            flex-basis: 15%;
+        }
+}
