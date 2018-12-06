@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Charts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        let myChart = document.querySelector('#myChart').getContext('2d');
+
+        // Global Options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultColor = 'lightgray';
+        Chart.defaults.global.defaultFontSize = 18;
+
+        let massPoPChart = new Chart(myChart, {
+            type: 'bar',// bar,pie,horizontalBar,line,Doughnut,radar,polarArea,
+            data: {
+                labels: ['China', 'India', 'United States', 'Indonesia', 'Brazil', 'Pakistan'],
+                datasets: [{
+                    label: 'population',
+                    data: [
+                        1417440625,
+                        1360503624,
+                        327767469,
+                        268018474,
+                        211555336,
+                        222465537
+                    ],
+                    // backgroundColor:'green'
+                    backgroundColor: ['#f39c12', '#c0392b', '#2980b9', '#8e44ad', '#2c3e50', '#1abc9c'],
+                    borderColor: '#777',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Largest Population Cities',
+                    fontSize: 25
+                },
+                legend: {
+                    display: !true,
+                    position: 'right',
+                    labels: {
+                        fontColor: "#000"
+                    }
+                },
+                layout:{
+                    padding:{
+                        left:50,
+                        right:0,
+                        bottom:0,
+                        top:0
+                    }
+                },
+                tooltips:{
+                    enabled:true
+                }
+            }
+
+        }); 
+    </script>
+</body>
+
+</html>
